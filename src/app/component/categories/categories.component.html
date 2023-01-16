@@ -1,0 +1,56 @@
+<app-accueill></app-accueill>
+<div class="row">
+   <div class=" col-sm-12 col-md-4 mt-5">
+       <div class="card border-0 shadow p-3">
+           <div class="form-floating mb-3 tetx-center">
+               <h5 class="text-center text-warning">Ajouter categories</h5>
+           </div>
+               <div class="form-floating mb-3">
+                   <input type="text" class="form-control" id="firstName" name="firstname" [(ngModel)]="first_name">
+                   <label for="firstname">Nom de categorie</label>
+               </div>
+               <div class="form-floating mb-3">
+                   <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="last_name">
+                   <label for="lastName">Action</label>
+               </div>
+               <div class="form-floating mb-3">
+                   <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+                   <label for="email">type de categories</label>
+               </div>
+               <!-- <div class="form-floating mb-3">
+                   <input type="text" class="form-control" id="mobile" name="mobile" [(ngModel)]="mobile">
+                   <label for="mobile">Mobile</label>
+               </div> -->
+               <button type="button" class="btn btn-outline-success" (click)="addCategorie()">Ajouter categories</button>
+       </div>
+   </div>
+   <div class="col-sm-12 col-md-8 mt-2">
+       <h5 class="text-danger"> Liste categories</h5>
+       <div class="card p-3 shadow">
+           <div class="card-body">
+               <table class="table table-hover">
+                   <thead>
+                     <tr>
+                       <th scope="col">Nom categorie</th>
+                       <th scope="col">Action</th>
+                       <th scope="col">type</th>
+                       <th scope="col">numero categorie</th>
+                       <!-- <th scope="col">Action</th> -->
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr *ngFor="let categorie of categoriesList">
+                       <td>{{categorie.first_name}}</td>
+                       <td>{{categorie.last_name}}</td>
+                       <td>{{categorie.email}}</td>
+                       <!-- <td>{{categorie.mobile}}</td> -->
+                       <td>
+                           <button class="btn btn-outline-danger" (click)=" deleteCategorie(categorie)">Supprimer categories</button>
+                       </td>
+                     </tr>
+                   </tbody>
+                 </table>
+           </div>
+       </div>
+   </div>
+</div>

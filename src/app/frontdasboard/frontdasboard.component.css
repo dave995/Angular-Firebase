@@ -1,0 +1,97 @@
+.container{
+    padding-left: 10%;
+}
+.ligne1
+{
+    border:none;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    width: 120px;
+    height: 100px;
+    background-color: #009688;
+}
+.ligne2
+{
+    border: 2px solid #17A2B8;
+     height: auto;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    width: 120px;
+    height: 100px;
+    background-color: #17A2B8;
+   
+}
+.ligne3
+{
+    border: 2px solid #FFC107;
+     height: auto;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    width: 120px;
+    height: 100px;
+    background-color: #FFC107;
+}
+.ligne4
+{
+    border: 2px solid #DC3545;
+     height: auto;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    width: 120px;
+    height: 100px;
+    background-color: #DC3545;
+}
+.card1,.card2,.card3,.card4
+{
+    height: 70px;
+}
+.card5,.card6
+{
+    height: 300px;
+}
+.blog_dasboard
+{
+    background-color: #eee;
+    height: 600px;
+}
+.fa1,.fa2,.fa3,.fa4
+{
+    color: #ffff;
+    margin-left: 35px;
+    margin-top: 10px;
+}
+.title
+{
+    font-size: 20px;
+    position: relative;
+    left:50px ;
+    bottom: 25px;
+}
+.title_paragraphe
+{
+    font-size: 15px;
+    position: relative;
+    bottom: 25px;
+}
+h6{
+    position: relative;
+    left: 150px;
+    bottom: 45px;
+}
+.mapage
+{
+    position: relative;
+    left: 150px;
+    bottom: 45px;
+}
+@media only screen and (max-width:768px) {
+    .blog_dasboard
+{
+    background-color: #eee;
+    height: 1200px;
+}
+}

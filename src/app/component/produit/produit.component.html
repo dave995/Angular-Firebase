@@ -1,0 +1,64 @@
+<app-accueill></app-accueill>
+<div class="container-fluid">
+   
+    <div class="row">
+        <div class="col-sm-12 col-md-4 mt-5">
+            <div class="card border-0 shadow p-3">
+                <div class="form-floating mb-3 tetx-center">
+                    <h5 class="text-center text-warning">Ajouter produit</h5>
+                </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="firstName" name="firstname" [(ngModel)]="first_name">
+                        <label for="firstname">Produit</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="last_name">
+                        <label for="lastName">type de produit</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+                        <label for="email">Prix</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="mobile" name="mobile" [(ngModel)]="mobile">
+                        <label for="mobile">Numero</label>
+                    </div>
+                    <button type="button" class="btn btn-outline-success" (click)="addProduiction()">Ajouter produit</button>
+            </div>
+        </div>
+        <div class=" col-sm-12 col-md-8 mt-2">
+            <h5 class="text-danger"> Liste de produit</h5>
+            <div class="card p-3 shadow">
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Produit</th>
+                            <th scope="col">Qualite</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col">Numero</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let produiction of produictionList">
+                    
+                            <td >{{produiction.first_name}}</td>
+                            <td>{{produiction.last_name}}</td>
+                            <td>{{produiction.email}}</td>
+                            <td>{{produiction.mobile}}</td>
+                            <td>
+                                <button class="btn btn-outline-danger" (click)="deleteProduiction(produiction)">Suprimer produit</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+</div>
