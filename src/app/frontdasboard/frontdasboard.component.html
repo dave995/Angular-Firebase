@@ -1,70 +1,104 @@
-<app-accueill></app-accueill>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="container">
-    <nav class="navbar navbar-expand-lg bg-light shadow p-3 mb-5 bg-body rounded">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <i class="fa fa-tachometer fa-2x" aria-hidden="true"></i><h1 class="title">Angular Crude Firebase</h1>
-                <p class="title_paragraphe fst-italic">Angulare crude firebase authentification</p>
-            </a>
-            <a class="navbar-brand text-success" href="#"> <i class="fa fa-home" aria-hidden="true"> / Dashboard </i>
-            </a>
-        </div>
-    </nav>
-</div>
-<!-- section carte -->
-<div class="container my-5 blog_dasboard">
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-            <div class="card card1">
-                <div class="container"></div>
-                <div class="ligne1">
-                    <i class="fa fa-users fa-3x fa1" aria-hidden="true"></i>
-                </div>
-                 <h6>Utilisateur</h6>
-                 <h5 class="mapage">24</h5>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card card2">
-                <div class="ligne2">
-                    <i class="fa fa-thumbs-up fa-3x fa2" aria-hidden="true"></i>
-                </div>
-                <h6>Categories</h6>
-                <h5 class="mapage">
-                   
-                </h5>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card card3">
-                <div class="ligne3">
-                    <i class="fa fa-clone fa-3x fa3" aria-hidden="true"></i>
-                </div>
-                <h6>Produit</h6>
-                <h5 class="mapage">24</h5>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card card4">
-                <div class="ligne4">
-                    <i class="fa fa-star fa-3x fa4" aria-hidden="true"></i>
-                </div>
-               
-            </div>
+
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-white" id="sidebar-wrapper">
+        <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
+                class="fas fa-user-secret me-2"></i>Market Place</div>
+        <div class="list-group list-group-flush my-3">
+            <a [routerLink]="['/dashboard']"class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                    class="fas fa-tachometer-alt me-2"></i>Home</a>
+            <a [routerLink]="['/dashboard']" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-project-diagram me-2"></i>Users</a>
+            <a  class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-paperclip me-2"></i>Categories</a>
+            <a [routerLink]="['/produit']"  class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-gift me-2"></i>Products</a>
+            <a [routerLink]="['/categories']" href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-comment-dots me-2"></i>Chat</a>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold logout"><i
+                    class="fas fa-power-off me-2"></i>Logout</a>
         </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-2 g-4 my-5">
-        <div class="col">
-          <div class="card card5">
-            
-          </div>
-        </div>
-        <div class="col">
-          <div class="card card6">
-         
-          </div>
+
+    <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                <h2 class="fs-2 m-0">Dashboard</h2>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user me-2"></i>HOME
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a [routerLink]="['/dashboard']" class="dropdown-item" href="#">Profile</a></li>
+                            <li><a [routerLink]="['/categories']" class="dropdown-item" href="#">Categorie</a></li>
+                            <li><a [routerLink]="['/produit']"  class="dropdown-item" href="#">produit</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid px-4">
+            <div class="row g-3 my-2">
+                <div class="col-md-6">
+                    <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                        <div>
+                            <h3 class="fs-2">{{categoriesList.length}}</h3>
+                            <p class="fs-5">Utilisateurs</p>
+                        </div>
+                        <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                        <div>
+                            <h3 class="fs-2" >{{produictionList.length}}</h3>
+                            <p class="fs-5">Categories</p>
+                        </div>
+                        <i class="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="row my-5">
+                <h3 class="fs-4 mb-3">Recemments</h3>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <img src="./../../assets/chart.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    var el = document.getElementById("wrapper");
+    var toggleButton = document.getElementById("menu-toggle");
+
+    toggleButton.onclick = function () {
+        el.classList.toggle("toggled");
+    };
+</script>

@@ -78,7 +78,7 @@ export class ProduitComponent implements OnInit {
   }
 
   deleteProduiction(produiction : Produiction) {
-    if (window.confirm('Are you sure you want to delete ' + produiction.first_name + ' ' + produiction.last_name + ' ?')) {
+    if (window.confirm('Are you sure you want to delete ' +produiction.first_name + ' ' + produiction.last_name + ' ?')) {
       this.data.deleteProduiction(produiction);
     }
    
